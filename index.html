@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SA TOKYO 2026</title>
 
-    <!-- Web App (PWA) 設定與 iOS 支援 -->
+    <!-- Web App (PWA) 配置與 iOS 支援 -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#F7F5F0">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,7 +63,7 @@
             background: #738271;
         }
 
-        /* 切換 Tab 時的柔和進場動畫 */
+        /* ✨ 切換 Tab 時的柔和進場動畫 */
         .fade-in-up {
             animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
@@ -85,7 +85,7 @@
                         S
                     </div>
                     <div>
-                        <h1 class="text-base font-bold text-muji-text tracking-wide">TOKYO 2026</h1>
+                        <h1 class="text-base font-bold text-muji-text tracking-wide">SA TOKYO 2026</h1>
                         <p class="text-xs text-muji-sage font-mono">09/11 – 09/17</p>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                         <span class="border-b border-muji-text/30 pb-0.5">UO870 (10:35 HKG)</span>
                     </a>
                     <span class="text-muji-border">|</span>
-                    <!-- PNR 加入連結可點擊跳轉至 HK Express -->
+                    <!-- PNR 官網連結 -->
                     <a href="https://www.hkexpress.com/zh-HK" target="_blank" class="flex items-center space-x-2 hover:opacity-70 transition cursor-pointer" title="點擊前往 HK Express 官方網站">
                         <i class="fa-solid fa-ticket text-muji-earth"></i>
                         <span>PNR: <strong class="text-muji-text border-b border-muji-text/30 pb-0.5">TDIV7K</strong></span>
@@ -116,7 +116,7 @@
     <!-- Main Content Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-        <!-- Weather Forecast Widget -->
+        <!-- ☀️ Weather Forecast Widget -->
         <div class="bg-muji-card p-5 sm:p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-muji-border gap-2">
                 <div class="flex items-center space-x-2.5">
@@ -321,10 +321,13 @@
             </div>
         </div>
 
-        <!-- Sticky Main Navigation Tabs -->
+        <!-- ✨ Sticky Main Navigation Tabs -->
         <div class="sticky top-[64px] z-30 bg-[#F7F5F0]/95 backdrop-blur-md pt-4 pb-3 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 border-b border-muji-border flex overflow-x-auto space-x-2 custom-scrollbar shadow-[0_4px_10px_rgba(0,0,0,0.02)]">
-            <button onclick="switchTab('hotel')" id="tab-hotel" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm">
-                <i class="fa-solid fa-hotel"></i><span>機場至酒店交通</span>
+            <button onclick="switchTab('transfer')" id="tab-transfer" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-sage text-white font-semibold shadow-sm">
+                <i class="fa-solid fa-train"></i><span>機場至酒店交通</span>
+            </button>
+            <button onclick="switchTab('hotel')" id="tab-hotel" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
+                <i class="fa-solid fa-hotel"></i><span>Hotel</span>
             </button>
             <button onclick="switchTab('karena')" id="tab-karena" class="tab-btn px-4 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition flex items-center space-x-2 bg-muji-card text-muji-muted hover:bg-muji-panel border border-muji-border">
                 <i class="fa-solid fa-music"></i><span>K-Arena</span>
@@ -346,14 +349,16 @@
             </button>
         </div>
 
-        <!-- TAB 1: HOTEL & AIRPORT TRANSFER -->
-        <section id="sec-hotel" class="tab-content block space-y-6 fade-in-up">
+        <!-- TAB 1: 機場至酒店交通 -->
+        <section id="sec-transfer" class="tab-content block space-y-6 fade-in-up">
+            
             <!-- Step by Step 到成田NEX車站 -->
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h2 class="text-lg font-bold text-muji-text mb-4 flex items-center">
                     <i class="fa-solid fa-map-location-dot text-muji-earth mr-2"></i>Step by Step 到成田NEX車站
                 </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- 改為三欄式，加入回程教學 -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <!-- Link 1: T2 到 NEX售票處 (D1.jpg) -->
                     <a href="D1.jpg" target="_blank" class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-sage transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex items-center justify-between">
                         <div class="flex items-center space-x-3">
@@ -380,6 +385,20 @@
                             </div>
                         </div>
                         <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-muji-muted group-hover:text-muji-earth"></i>
+                    </a>
+                    
+                    <!-- Link 3: 回程劃位教學 (M7.jpg) -->
+                    <a href="M7.jpg" target="_blank" class="p-4 bg-muji-panel rounded-xl border border-muji-border hover:border-muji-terracotta transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-muji-card border border-muji-border flex items-center justify-center text-muji-terracotta shadow-sm">
+                                <i class="fa-solid fa-plane-arrival text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm text-muji-text group-hover:text-muji-terracotta transition-colors">回程劃位教學</h3>
+                                <p class="text-xs text-muji-muted mt-0.5">點擊查看圖解</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-muji-muted group-hover:text-muji-terracotta"></i>
                     </a>
                 </div>
             </div>
@@ -498,9 +517,303 @@
                     </div>
                 </div>
             </div>
+
         </section>
 
-        <!-- TAB: K-Arena -->
+        <!-- ✨ TAB 2: HOTEL -->
+        <section id="sec-hotel" class="tab-content hidden space-y-6 fade-in-up">
+            
+            <!-- 飯店基本資料卡片 -->
+            <div class="bg-muji-card p-6 sm:p-8 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <!-- 酒店名稱與次標題 -->
+                <div class="border-b border-muji-border pb-4 mb-6">
+                    <div class="flex items-center space-x-2.5 mb-1">
+                        <h2 class="text-lg sm:text-xl font-bold text-muji-text">APA飯店 新宿歌舞伎町塔</h2>
+                        <span class="bg-muji-sage/15 text-muji-sage text-[10px] font-semibold px-2 py-0.5 rounded-full border border-muji-sage/30">預定住宿</span>
+                    </div>
+                    <p class="text-xs text-muji-muted font-mono">APA Hotel Shinjuku-Kabukicho Tower</p>
+                </div>
+
+                <!-- 極簡列點清單 -->
+                <ul class="space-y-4 text-xs sm:text-sm text-muji-text">
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-earth mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-location-dot"></i></span>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                                <span class="text-muji-muted font-medium shrink-0">飯店地址：</span>
+                                <div>
+                                    <p class="font-medium">〒160-0021 東京都新宿區歌舞伎町 1-20-2</p>
+                                    <p class="text-[11px] text-muji-muted font-mono mt-0.5">1-20-2 Kabukicho, Shinjuku City, Tokyo 160-0021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-sage mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-clock"></i></span>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                                <span class="text-muji-muted font-medium shrink-0">入住 / 退房：</span>
+                                <span class="font-medium">Check-in 15:00 ｜ Check-out 10:00</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-terracotta mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-hot-tub-person"></i></span>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                                <span class="text-muji-muted font-medium shrink-0">特色設施：</span>
+                                <span class="font-medium">28F 頂樓露天大浴場（準天然光明石溫泉・住客無料）</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-earth mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-train-subway"></i></span>
+                        <div>
+                            <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                                <span class="text-muji-muted font-medium shrink-0">周邊交通：</span>
+                                <span class="font-medium">西武新宿站 步行約 2 分鐘 ｜ JR 新宿站（東口）步行約 6 分鐘</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-sage mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-globe"></i></span>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                            <span class="text-muji-muted font-medium shrink-0">官方網站：</span>
+                            <a href="https://www3.apahotel.com/hotel/syutoken/tokyo/shinjuku-kabukichotower/" target="_blank" class="text-muji-sage hover:underline font-medium inline-flex items-center">
+                                前往官網查看設施與預訂 <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="flex items-start space-x-3">
+                        <span class="text-muji-earth mt-0.5 text-base w-5 text-center shrink-0"><i class="fa-solid fa-map-location-dot"></i></span>
+                        <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2">
+                            <span class="text-muji-muted font-medium shrink-0">地圖導航：</span>
+                            <a href="https://www.google.com/maps/place/APA+Hotel+Shinjuku-Kabukicho+Tower/@35.6953284,139.7011409,17z/" target="_blank" class="text-muji-earth hover:underline font-medium inline-flex items-center">
+                                Google Maps 實時定位與導航 <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 飯店往返交通指南 -->
+            <div class="mt-8">
+                <h2 class="text-lg font-bold text-muji-text mb-4 flex items-center">
+                    <i class="fa-solid fa-route text-muji-sage mr-2"></i>飯店往返交通指南
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Box 1: Skyliner -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative flex flex-col justify-between">
+                        <div>
+                            <div class="absolute top-3 right-3 bg-muji-panel text-muji-text text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-muji-border">
+                                速度最快
+                            </div>
+                            <h3 class="text-base font-bold text-muji-text flex items-center">🚄 京成電鐵 Skyliner</h3>
+                            <p class="text-xs text-muji-muted mt-1 mb-4">盡快抵達飯店放行李的最佳選擇。</p>
+                            
+                            <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">交通工具：</span><span>Skyliner 轉乘 JR</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-sage">約 75 - 85 分鐘</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">轉乘次數：</span><span class="font-medium text-muji-text">1 次（日暮里站）</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Timeline UI -->
+                            <div class="mt-4 mb-5 ml-2 relative pl-4 border-l-[1.5px] border-dashed border-muji-sage/50 space-y-4">
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">成田機場 Terminal 2/3</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">搭乘 京成 Skyliner 出發</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">日暮里站轉乘</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">換乘 JR 山手線</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">JR 新宿站</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">東口出站步行至飯店</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 按鈕群組 -->
+                        <div class="space-y-2 mt-2">
+                            <a href="M4.jpg" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-image mr-1"></i>T2到Skyliner實景圖
+                            </a>
+                            <a href="M1.jpg" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map mr-1"></i>鐵路路線圖
+                            </a>
+                            <a href="https://www.google.com/maps/dir/Shinjuku+Station/APA+Hotel+Shinjuku-Kabukicho+Tower/" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map-location-dot mr-1"></i>車站至飯店步行導航
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: N'EX -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative flex flex-col justify-between">
+                        <div>
+                            <div class="absolute top-3 right-3 bg-muji-panel text-muji-text text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-muji-border">
+                                列車直達
+                            </div>
+                            <h3 class="text-base font-bold text-muji-text flex items-center">🚆 JR 成田特快 N'EX</h3>
+                            <p class="text-xs text-muji-muted mt-1 mb-4">全車指定席且有大型行李架，最省心。</p>
+                            
+                            <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">交通工具：</span><span>JR N'EX 直達車</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-sage">約 80 - 95 分鐘</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">轉乘次數：</span><span class="font-medium text-muji-text">直達（0 次）</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Timeline UI -->
+                            <div class="mt-4 mb-5 ml-2 relative pl-4 border-l-[1.5px] border-dashed border-muji-sage/50 space-y-4">
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">成田機場 Terminal 2/3</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">搭乘 JR 成田特快 N'EX</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">直達 JR 新宿站</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">東南口/東口出站步行至飯店</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ✨ 按鈕群組 (已將D4.jpg改為D1.jpg) -->
+                        <div class="space-y-2 mt-2">
+                            <a href="D1.jpg" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-image mr-1"></i>T2到NE'X實景圖
+                            </a>
+                            <a href="M5.png" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map mr-1"></i>鐵路路線圖
+                            </a>
+                            <a href="https://www.google.com/maps/dir/Shinjuku+Station/APA+Hotel+Shinjuku-Kabukicho+Tower/" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map-location-dot mr-1"></i>車站至飯店步行導航
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Box 3: Limousine Bus -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative flex flex-col justify-between">
+                        <div>
+                            <div class="absolute top-3 right-3 bg-muji-panel text-muji-text text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-muji-border">
+                                免搬行李
+                            </div>
+                            <h3 class="text-base font-bold text-muji-text flex items-center">🚌 機場 / 利木津巴士</h3>
+                            <p class="text-xs text-muji-muted mt-1 mb-4">免去月台穿梭與上下樓梯的勞累。</p>
+                            
+                            <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">交通工具：</span><span>舒適機場大巴</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">預估車程：</span><span class="font-bold text-muji-sage">約 90 - 110 分鐘</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">轉乘次數：</span><span class="font-medium text-muji-text">直達（0 次）</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Timeline UI -->
+                            <div class="mt-4 mb-5 ml-2 relative pl-4 border-l-[1.5px] border-dashed border-muji-sage/50 space-y-4">
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">成田機場 Terminal 2/3</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">搭乘利木津巴士出發</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">直達 新宿站西口 / BUSTA</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">下車後步行至飯店</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 按鈕群組 -->
+                        <div class="space-y-2 mt-2">
+                            <a href="M2.jpg" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-regular fa-clock mr-1"></i>時刻表
+                            </a>
+                            <a href="https://www.google.com/maps/dir/Busta+Shinjuku/APA+Hotel+Shinjuku-Kabukicho+Tower/" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map-location-dot mr-1"></i>巴士站至飯店步行導航
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Box 4: To K-Arena -->
+                    <div class="bg-muji-card p-5 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md relative flex flex-col justify-between">
+                        <div>
+                            <div class="absolute top-3 right-3 bg-muji-panel text-muji-text text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-muji-border">
+                                班次最多
+                            </div>
+                            <h3 class="text-base font-bold text-muji-text flex items-center">🏟️ 前往 K-Arena 會場</h3>
+                            <p class="text-xs text-muji-muted mt-1 mb-4">搭乘 JR 直達橫濱站，最直覺快速。</p>
+                            
+                            <ul class="space-y-2.5 text-xs text-muji-text mb-6">
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">交通工具：</span><span>JR 湘南新宿線</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">乘車時間：</span><span class="font-bold text-muji-sage">約 35 分鐘</span>
+                                </li>
+                                <li class="flex justify-between border-b border-muji-panel pb-1.5">
+                                    <span class="text-muji-muted">轉乘次數：</span><span class="font-medium text-muji-text">橫濱直達（0 次）</span>
+                                </li>
+                            </ul>
+                            
+                            <!-- Timeline UI -->
+                            <div class="mt-4 mb-5 ml-2 relative pl-4 border-l-[1.5px] border-dashed border-muji-sage/50 space-y-4">
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">從飯店步行至 JR 新宿站</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">步行約 6 - 8 分鐘</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">搭乘 JR 湘南新宿線</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">直達 JR 橫濱站</p>
+                                </div>
+                                <div class="relative">
+                                    <span class="absolute -left-[21px] top-0.5 w-2.5 h-2.5 rounded-full bg-muji-sage ring-[3px] ring-white"></span>
+                                    <p class="text-xs font-bold text-muji-text">橫濱站東口出站</p>
+                                    <p class="text-[10px] text-muji-muted mt-0.5">步行約 10 - 15 分鐘即抵達會場</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 按鈕群組 -->
+                        <div class="space-y-2 mt-2">
+                            <a href="M6.png" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map mr-1"></i>鐵路路線圖
+                            </a>
+                            <a href="https://www.google.com/maps/dir/Yokohama+Station/K-Arena+Yokohama/" target="_blank" class="block w-full text-center py-2 bg-muji-panel hover:bg-muji-border text-muji-text rounded-xl text-xs font-medium transition border border-muji-border">
+                                <i class="fa-solid fa-map-location-dot mr-1"></i>橫濱站至會場步行導航
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- TAB 3: K-Arena -->
         <section id="sec-karena" class="tab-content hidden space-y-6 fade-in-up">
             <!-- K-Arena Sub-Tabs Selector -->
             <div class="flex space-x-2 border-b border-muji-border pb-2">
@@ -693,7 +1006,7 @@
             </div>
         </section>
 
-        <!-- TAB 3: FIREWORKS SPECIAL -->
+        <!-- TAB 4: FIREWORKS SPECIAL -->
         <section id="sec-fireworks" class="tab-content hidden space-y-6 fade-in-up">
             <!-- Fireworks Sub-Tabs Selector -->
             <div class="flex space-x-2 border-b border-muji-border pb-2">
@@ -853,9 +1166,9 @@
             </div>
         </section>
 
-        <!-- TAB 4: 名店Shopping Mall (SHOPPING) -->
+        <!-- TAB 5: 名店Shopping Mall (SHOPPING) -->
         <section id="sec-shopping" class="tab-content hidden space-y-6 fade-in-up">
-            <!-- Rilakkuma Section -->
+            <!-- 🧸 Rilakkuma Section -->
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <div class="flex items-center justify-between flex-wrap gap-3 pb-4 border-b border-muji-border mb-6">
                     <div class="flex items-center space-x-3.5">
@@ -918,7 +1231,7 @@
                 </div>
             </div>
 
-            <!-- Luxury Brands Section -->
+            <!-- 💎 Luxury Brands Section -->
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <div class="pb-3 border-b border-muji-border mb-4 flex items-center justify-between">
                     <div>
@@ -948,17 +1261,67 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 🛒 生活百貨 Section -->
+            <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div class="pb-3 border-b border-muji-border mb-4 flex items-center justify-between">
+                    <div>
+                        <h2 class="text-lg font-bold text-muji-text flex items-center">
+                            <i class="fa-solid fa-basket-shopping text-muji-sage mr-2"></i>生活百貨
+                        </h2>
+                    </div>
+                    <span class="text-[11px] text-muji-muted font-mono bg-muji-panel px-3 py-1 rounded-lg border border-muji-border hidden sm:block">
+                        LIFESTYLE & GOODS
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                    <!-- 3COINS -->
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-xs text-muji-text mb-1.5">🪙 3COINS +plus 西武新宿 PePe 店</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed mb-3">知名 300 円均一店的升級版，除了經典生活雜貨與飾品，更加入食品及小型傢俱，CP 值極高。</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/3COINS+%2Bplus+Seibu+Shinjuku+PePe" target="_blank" class="text-xs text-muji-earth hover:underline font-medium inline-flex items-center"><i class="fa-solid fa-location-arrow mr-1"></i>導航至 3COINS</a>
+                    </div>
+                    <!-- Standard Products -->
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-xs text-muji-text mb-1.5">📦 Standard Products Bic Camera 新宿東口店</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed mb-3">大創 (Daiso) 旗下高質感品牌。主打簡約無印風的百搭生活用品，設計沉穩俐落，極具質感。</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Standard+Products+Bic+Camera+Shinjuku+East" target="_blank" class="text-xs text-muji-earth hover:underline font-medium inline-flex items-center"><i class="fa-solid fa-location-arrow mr-1"></i>導航至門市</a>
+                    </div>
+                    <!-- Flying Tiger -->
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-xs text-muji-text mb-1.5">🐯 Flying Tiger Copenhagen 京王百貨新宿店</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed mb-3">來自北歐丹麥的平價雜貨。以色彩繽紛、充滿幽默感與創意的生活小物件聞名，好逛又好買。</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/Flying+Tiger+Copenhagen+Keio+Shinjuku" target="_blank" class="text-xs text-muji-earth hover:underline font-medium inline-flex items-center"><i class="fa-solid fa-location-arrow mr-1"></i>導航至京王百貨</a>
+                    </div>
+                    <!-- THREEPPY -->
+                    <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-bold text-xs text-muji-text mb-1.5">🎀 THREEPPY ビックカメラ新宿東口店</h3>
+                            <p class="text-xs text-muji-muted leading-relaxed mb-3">同樣是大創旗下，主打甜美可愛風。商品以柔和粉嫩色系為主，適合喜歡精緻少女感居家小物的旅客。</p>
+                        </div>
+                        <a href="https://www.google.com/maps/search/THREEPPY+Bic+Camera+Shinjuku+East" target="_blank" class="text-xs text-muji-earth hover:underline font-medium inline-flex items-center"><i class="fa-solid fa-location-arrow mr-1"></i>導航至 THREEPPY</a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- TAB 5: APPS & TAXI -->
+        <!-- TAB 6: APPS & TAXI -->
         <section id="sec-apps" class="tab-content hidden space-y-6 fade-in-up">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
                 <!-- Taxi Apps -->
                 <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                     <h2 class="text-base font-bold text-muji-text mb-4 flex items-center">
                         <i class="fa-solid fa-taxi text-muji-earth mr-2"></i>日本叫車Apps
                     </h2>
                     <div class="space-y-4">
+                        
                         <!-- GO -->
                         <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                             <div class="flex justify-between items-center mb-1">
@@ -1009,6 +1372,7 @@
                         <i class="fa-solid fa-train-subway text-muji-sage mr-2"></i>大眾交通 & 鐵路 Apps
                     </h2>
                     <div class="space-y-4">
+                        
                         <!-- 乗換NAVITIME -->
                         <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                             <div class="flex justify-between items-center mb-1">
@@ -1062,6 +1426,7 @@
                                 <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-muji-muted"></i>
                             </a>
                         </div>
+
                     </div>
                 </div>
 
@@ -1071,6 +1436,7 @@
                         <i class="fa-solid fa-utensils text-muji-terracotta mr-2"></i>餐廳book枱Apps
                     </h2>
                     <div class="space-y-4">
+                        
                         <!-- Tabelog -->
                         <div class="p-4 bg-muji-panel rounded-xl border border-muji-border transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                             <div class="flex justify-between items-center mb-1">
@@ -1107,7 +1473,7 @@
             </div>
         </section>
 
-        <!-- TAB 6: TOOLS & CHECKLIST -->
+        <!-- TAB 7: TOOLS & CHECKLIST -->
         <section id="sec-tools" class="tab-content hidden space-y-6 fade-in-up">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <!-- Currency Converter -->
@@ -1143,7 +1509,7 @@
             </div>
         </section>
 
-        <!-- TAB 7: VISIT JAPAN WEB -->
+        <!-- TAB 8: VISIT JAPAN WEB -->
         <section id="sec-vjw" class="tab-content hidden space-y-6 fade-in-up">
             <div class="bg-muji-card p-6 rounded-2xl border border-muji-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <div class="pb-3 border-b border-muji-border mb-6 flex items-center justify-between">
@@ -1183,7 +1549,7 @@
                                 不熟悉填寫流程？這份詳細的 2026 最新圖文攻略將一步步教你如何快速完成入境與海關申報手續。
                             </p>
                         </div>
-                        <a href="https://hk.trip.com/guide/info/Visit+Japan+Web.html?allianceid=14882&sid=326301445&ppcid=adid-822099557037_akid-dsa-2444031750932_adgid-199610768837&utm_source=google&utm_medium=cpc&utm_campaign=24172294464&gad_source=1&gad_campaignid=24172294464&gbraid=0AAAAABn2eFJGt5JDrixtmgYvTSUS68nXI&gclid=CjwKCAjwwfnUBhAtEiwAfQpAYsCmpCn9QyApPASQGRCov3bwdudHwZFZTa6U9lMGhHtRvDzQydrdGxoCs6UQAvD_BwE&webpage=10650146128&unilink=1&ouid=ctag.hash.bG3RFcZYpr8h&linkid=e79143a8-1c5b-4f57-b1d2-d3a696cb89b3&ibuwakeuptag=other_ul&mktTag=1&from-native_page=1" target="_blank" class="block w-full text-center py-2.5 bg-muji-earth text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
+                        <a href="https://hk.trip.com/guide/info/Visit+Japan+Web.html?allianceid=14882&sid=326301445&ppcid=adid-822099557037_akid-dsa-2444031750932_adgid-199610768837&utm_source=google&utm_medium=cpc&utm_campaign=24172294464&gad_source=1&gad_campaignid=24172294464&gbraid=0AAAAABn2eFJGt5JDrixtmgYvTSUS68nXI&gclid=CjwKCAjwwfnUBhAtEiwAfQpAYsCmpCn9QyApPASQGRCov3bwdudHwZFZTa6U9lMGhHtRvDzQydrdGxoCs6UQAvD_BwE&webpage=10650146128&unilink=1&ouid=ctag.hash.bG3RFcZYpr8h&linkid=e79143a8-1c5b-4f57-b1d2-d3a696cb89b3&ibuwakeuptag=other_ul&mktTag=1&from_native_page=1" target="_blank" class="block w-full text-center py-2.5 bg-muji-earth text-white font-medium rounded-xl text-xs hover:opacity-90 transition shadow-sm">
                             <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>查看圖文教學
                         </a>
                     </div>
@@ -1215,6 +1581,7 @@
 
             <!-- Modal Content (Scrollable) -->
             <div class="p-5 overflow-y-auto custom-scrollbar space-y-5">
+                
                 <!-- 圖片主體 -->
                 <div class="bg-white p-3 rounded-2xl border border-muji-border shadow-sm flex flex-col items-center">
                     <div class="w-full flex justify-between items-center text-xs text-muji-muted mb-2 px-1">
